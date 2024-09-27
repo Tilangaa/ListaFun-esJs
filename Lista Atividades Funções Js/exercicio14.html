@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<script>
+
+            function formuladeBhaskara(a,b,c){
+            if(a === 0){
+                alert("O valor não pode ser 0")
+                return null
+            }     
+
+            let delta = b * b - 4 * a * c
+
+            if (delta < 0){
+                return "Não existem raízes reais"
+            }
+            let raiz1 = ((-b) + Math.sqrt(delta)) / (2 * a)
+            let raiz2 = ((-b) - Math.sqrt(delta)) / (2 * a)
+
+            return [raiz1, raiz2]
+
+            }
+
+            let resultado = formuladeBhaskara(2, -5, -7);
+            
+            alert("As raízes são: " + resultado[0] + " e " + resultado[1]);
+
+</script>
+<body>
+    <h1>Exercício 14</h1>
+</body>
+</html>

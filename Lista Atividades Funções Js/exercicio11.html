@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+    <script>
+        
+         function colocarDados() {
+            return Math.floor(Math.random() * 6) + 1;
+        }
+
+        function jogarCraps() {
+            const dado1 = colocarDados();
+            const dado2 = colocarDados();
+            const soma = dado1 + dado2;
+            alert(`Você tirou: ${dado1} + ${dado2} = ${soma}`);
+            
+            if (soma === 7 || soma === 11) {
+                alert("Parabéns! Você tirou um Natural e venceu!");
+            } else if (soma === 2 || soma === 3 || soma === 12) {
+                alert("Craps! Você perdeu.");
+            } else {
+                const ponto = soma;
+                alert(`Seu ponto é ${ponto}. Continue jogando...`);
+                
+                while (true) {
+                    const dado1 = colocarDados();
+                    const dado2 = colocarDados();
+                    const soma = dado1 + dado2;
+                    alert(`Você tirou: ${dado1} + ${dado2} = ${soma}`);
+                    
+                    if (soma === ponto) {
+                        alert("Parabéns! Você ganhou tirando o seu ponto novamente!");
+                        break;
+                    } else if (soma === 7) {
+                        alert("Você tirou um 7 antes de tirar o seu ponto. Você perdeu.");
+                        break;
+                    }
+                }
+            }
+        }
+
+        jogarCraps();
+
+    </script>
+</head>
+<body>
+    <html>Exercício 11</html>
+</body>
+</html>
